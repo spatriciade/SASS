@@ -1,0 +1,38 @@
+//para pedir el tamaño de una fuente
+@function fs($size) {
+  @return map-get($map: $font-sizes, $key: $size);
+}
+@function tfw($weight) {
+  @return map-get($map: $titillium-fw, $key: $weight);
+}
+@function rfw($weight) {
+  @return map-get($map: $Rubik-fw, $key: $weight);
+}
+@function getPadding($position) {
+  @return nth($list: $padding, $n: $position);
+}
+
+@function getFont($first){
+    @if $first == true {
+        @return $Rubik;
+    }
+    @else {
+        @return $titillium;
+    }
+}
+@function getImg($file-name,$file-extension){
+// $file-name: "logo";
+// $file-extension: "jpg";
+//concatenar parametros
+$path: $base-path + $file-name + "." + $file-extension; //"../img/logo.jpg"
+@return $path;
+}
+
+@function getRadius($radius){
+  @return nth($list: $border-radius, $n:$radius );
+
+}
+
+@function getRcolor($num){
+  @return nth($rainbow, $num);
+}

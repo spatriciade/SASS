@@ -1,0 +1,28 @@
+//si no lleva parametros no tiene que llevar parentesis
+@mixin color-theme($color-th) {
+  color: darken($color: $color-th, $amount: 25%);
+  background-color: lighten($color: $color-th, $amount: 10%);
+  border: 1px solid $color-th;
+}
+@mixin flexCenter($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin flexDirection($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+@mixin themeBg($light-theme: true) {
+  @if $light-theme {
+    background-color: lighten($bg-color, 75%);
+    p {
+      color: darken(
+        $color: $bg-color,
+        $amount: 25%
+      ) !important;
+      //con este indicativo nos aseguramos que salga el color
+    }
+  }
+}

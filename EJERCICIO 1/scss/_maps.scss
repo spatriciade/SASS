@@ -1,0 +1,36 @@
+$font-sizes: (
+  //por medio de arrays y se crea como un objeto JSON
+  "small": 0.5rem,
+  "initial": 0.785rem,
+  "medium": 1rem,
+  "large": 1.5rem,
+  "x-large": 2rem,
+  "xx-large": 3.5rem
+);
+
+$titillium-fw: (
+  "ExtraLight": 200,
+  "Light": 300,
+  "Regular": 400,
+  "SemiBold": 600,
+  "Bold": 700,
+  "Black": 900,
+);
+
+$Rubik-fw: (
+  "Light": 300,
+  "Regular": 400,
+  "Medium": 500,
+  "SemiBold": 600,
+  "Bold": 700,
+  "ExtraBold": 800,
+  "Black": 900,
+);
+$header-sizes:(
+  "h1": 3.5rem,
+  "h2": 2.25rem,
+  "h3": 1.5rem,
+  "h4": 1.1rem,
+  "h5": 0.9rem,
+  "h6": 0.7rem,
+);

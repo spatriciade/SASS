@@ -3,10 +3,128 @@
 @import "./mixings";
 @import "./maps";
 @import "./functions";
+@import "./lists";
+
 // Generics
+:root {
+  // font-size: 0.785rem;
+  font-size: fs("medium");
+  box-sizing: border-box; //incluye border y padding
+}
+
+@each $header, $value in $header-sizes{
+  #{$header}{
+    font-size: #{$value};
+  }
+}
+
+$headers:"";
+$start: 1;
+$end: 6;
+
+@while $start <= $end{
+  $headers: $headers+h#{$start}+", ";   //h1,h2,h3etc
+$start: $start + 1;
+  }
+
+#{$headers}{
+  font-family: getFont(false);
+}
 
 
-:root{
-font-size: 0.785rem;
-box-sizing: border-box; //incluye border y padding
+body {
+  
+&.light {
+ @include themeBg(false);
+}
+  background-color: $bg-color;
+  // padding-top: nth($padding, -1 );
+  padding: getPadding(3) getPadding(-1);
+  // padding: nth($padding, 2,-1 ); Esta funcion no es valida por tener 4 valores
+  font-family: getFont(true);
+  font-weight: rfw ("Regular");
+
+  .main {
+    width: 80%;
+    //border: $standar-border;//
+    border: 1px solid;
+    border-radius: $br-1;
+    padding: 1em 2em;
+    margin: 2em auto;
+    margin-top: $margin-top;
+    margin-top: $mt-3;
+    background-image: url(getImg("logo", "jpg"));
+    background-position: center;
+    background-size: cover;
+    &-header {
+      //aqui enlazas con la segunda clase que hay en HTML dentro de main
+      font-size: fs("xx-large");
+      font-weight: tfw("Black");
+      font-family: getFont(false);
+      //aqui anidas de nuevo y haces que el color cambie al pasar el raton
+      transition: color 0.3s ease-in-out;
+      &:hover {
+        color: $Orange;
+      }
+    }
+  }
+  .message {
+    padding: getPadding(2) getPadding(4);
+    border-radius: getRadius(2);
+    width: 70%;
+    margin: 1em auto;
+  }
+  .message-info {
+    @extend .message;
+    @include color-theme($Blue);
+    // color: darken($color: $Blue, $amount: 25%);
+    // background-color: lighten($color: $Blue, $amount: 10%);
+    // border: 1px solid $Blue;
+  }
+  .message-danger {
+    @extend .message;
+    @include color-theme($Red);
+    //la linea @include viene de mixins y va despues de las lineas de abajo, que ya no son necesarias porque se ahorra codigo con mixins
+    // color: darken($color: $Red, $amount: 25%);
+    // background-color: lighten($color: $Red, $amount: 10%);
+    // border: 1px solid $Red;
+  }
+
+  .message-success {
+    @extend .message;
+    @include color-theme($Success);
+  }
+
+  .message-warning {
+    @extend .message;
+    @include color-theme($Warning);
+  }
+  header {
+    background-color: $Dark;
+    padding: getPadding(2) getPadding(3);
+    nav {
+      width: 50%;
+    }
+    ul {
+      @include flexCenter(space-between);
+      li {
+        background-color: yellow;
+        padding: getPadding(2) getPadding(3);
+        border-radius: getRadius(1);
+        a {
+          color: darken($color: $Dark, $amount: 10%)
+        }
+      }
+    }
+  }
+  p{
+    padding: getPadding(2) getPadding(3);
+    border-radius: getRadius(2);
+font-size: fs("medium");
+  @for $value from 1 through length($rainbow){
+    &:nth-child(#{$value}){
+      background-color: getRcolor($value);
+    }
+  }
+  }
 }
