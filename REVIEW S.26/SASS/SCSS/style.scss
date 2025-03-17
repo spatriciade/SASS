@@ -1,0 +1,86 @@
+@import "./reset"; //importa los mapas
+@import "./variables";
+@import "./maps";
+@import "./functions";
+@import "./mixins";
+
+//While loop
+$headers:"";
+$start: 1;
+$limit: 6;
+@while $start <= $limit {
+  $headers: $headers + h#{$start}+ ", ";
+  $start: $start + 1;
+}
+#{$headers} {
+  font-family: font-family(Titilium);
+}
+
+//As a result:
+//h1, h2, h3, h4, h5, h6 {
+//font-family: "Titilium Web", sans-serif;
+
+
+
+body {
+  &.light {
+    @include theme(true);
+  }
+  @include flexCenter(flex-end);
+  background-color: $green;
+  width: $full-width;
+  //height: $full-height;
+  color: $dark;
+  .main {
+    width: 80%;
+    //margin: 2em auto; //da conflicto con flex-end
+    border: 1px solid $dark;
+    border-radius: 0.3rem;
+    &-header {
+      //esto concatena main con main-header
+      font-size: map-get($font-weight-titillium, bold);
+      font-family: font-family(Titilium);
+      transition: color 0.3s ease-in-out;
+      font-weight: Titilium-weight("black");
+      &:hover {
+        color: $orange;
+      }
+    }
+    p {
+      color: $white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      font-family: font-family(Rubik);
+      @for $i from 1 through length($rainbow) {
+        &:nth-child(#{$i}) {
+          //#{}:interpolación = Template literal JS
+          background-color: nth($rainbow, $i);
+        }
+      }
+    }
+    .message {
+      padding: 0.8em 1.5em;
+      border-radius: 0.7rem;
+      width: 70%;
+      margin: 1em auto;
+    }
+    .message-info {
+      @extend .message; //similar to bootstrap alert styles
+      color: darken($blue, 25%);
+      background-color: lighten($blue, 20%);
+    }
+    .message-danger {
+      @extend .message; //similar to bootstrap alert styles
+      color: darken($red, 25%);
+      background-color: lighten($red, 20%);
+    }
+    @each $header, $value in $header-sizes {
+      #{$header} {
+        //interpolate
+        font-size: #{$value};
+      }
+    }
+    
+   
+  }
+}

@@ -1,0 +1,14 @@
+@mixin flexCenter($justify) {
+  //To be ue-used: centrado horizontal y vertical
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+@mixin theme($light-theme: true) {
+  @if ($light-theme) {
+    background-color: lighten($bg-color, 50%);
+    p {
+      color: darken($dark, 100%) !important;
+    }
+  }
+}

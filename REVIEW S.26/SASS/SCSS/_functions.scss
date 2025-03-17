@@ -1,0 +1,15 @@
+//Las funciones 
+@function rubik-weight($weight){
+    @return map-get($font-weight-rubik,$weight);
+  }
+  @function Titilium-weight($weight){
+    @return map-get($font-weight-titillium,$weight);
+  }
+  
+  @function font-family($family){
+  @if($family == Rubik){
+    @return "Rubik", sans-serif;
+  } @else {
+    @return "Titilium Web",sans-serif;
+  }
+  }

@@ -1,0 +1,138 @@
+/*Reset*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: inherit;
+  outline: 0 none;
+  list-style: none;
+}
+
+:root {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
+h6 {
+  font-size: 0.7rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  background-color: #28a745;
+  padding: 1em 3em;
+  font-family: "Rubik", sans-serif;
+  font-weight: rfw "Regular";
+}
+body .main {
+  width: 80%;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  padding: 1em 2em;
+  margin: 2em auto;
+  margin-top: 30px;
+  margin-top: 5em;
+  background-image: url("../img/logo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+body .main-header {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: "Titillium Web", sans-serif;
+  transition: color 0.3s ease-in-out;
+}
+body .main-header:hover {
+  color: #fd7e14;
+}
+body .message, body .message-warning, body .message-success, body .message-danger, body .message-info {
+  padding: 0.5em 1.5em;
+  border-radius: 0.3rem;
+  width: 70%;
+  margin: 1em auto;
+}
+body .message-info {
+  color: #003e80;
+  background-color: #3395ff;
+  border: 1px solid #007bff;
+}
+body .message-danger {
+  color: #7c151f;
+  background-color: #e4606d;
+  border: 1px solid #dc3545;
+}
+body .message-success {
+  color: #0f401b;
+  background-color: #34ce57;
+  border: 1px solid #28a745;
+}
+body .message-warning {
+  color: #876500;
+  background-color: #ffce3a;
+  border: 1px solid #ffc107;
+}
+body header {
+  background-color: #343a40;
+  padding: 0.5em 1em;
+}
+body header nav {
+  width: 50%;
+}
+body header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header ul li {
+  background-color: yellow;
+  padding: 0.5em 1em;
+  border-radius: 0.2rem;
+}
+body header ul li a {
+  color: #1d2124;
+}
+body p {
+  padding: 0.5em 1em;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+}
+body p:nth-child(1) {
+  background-color: #6f42c1;
+}
+body p:nth-child(2) {
+  background-color: #17a2b8;
+}
+body p:nth-child(3) {
+  background-color: darkolivegreen;
+}
+body p:nth-child(4) {
+  background-color: #ffc107;
+}
+body p:nth-child(5) {
+  background-color: #fd7e14;
+}/*# sourceMappingURL=style.css.map */

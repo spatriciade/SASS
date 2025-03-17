@@ -1,0 +1,37 @@
+$font-sizes: (
+  "small": 0.5rem,
+  "initial": 0.875rem,
+  "medium": 1rem,
+  "large": 1.5rem,
+  "x-large": 2rem,
+  "xxx-large": 5rem,
+);
+
+$font-weight-rubik: (
+  "regular": 400,
+  "italic": 400,
+  "medium": 500,
+  "medium-italic": 500,
+  "bold": 700,
+  "bold-italic": 700,
+  "black": 900,
+  "black-italic": 900,
+);
+//Mapa
+$font-weight-titillium: (
+  "extra-light": 200,
+  "light": 300,
+  "regular": 400,
+  "semi-bold": 600,
+  "bold": 700,
+  "black": 900,
+);
+$rainbow: ($purple, $cyan, $green, $yellow, $orange); //lista
+$header-sizes: (
+  "h1": 3.5rem,
+  "h2": 2.25rem,
+  "h3": 1.5rem,
+  "h4": 1.1rem,
+  "h5": 0.9rem,
+  "h6": 0.7rem,
+);
